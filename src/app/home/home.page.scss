@@ -25,3 +25,19 @@
 #container a {
   text-decoration: none;
 }
+
+
+
+ion-col {
+    
+  text-align: center;
+  
+}
+ion-item{
+  --background: match-parent;
+  --border-color: match-parent;
+  --color: match-parent;
+}
+ion-row{
+  padding: 0;
+}

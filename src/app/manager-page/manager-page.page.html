@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+          [text]="Back">
+        </ion-back-button>
+    </ion-buttons>
+    <ion-title>Manager Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-grid fixed="sm">
+  <div class="wrap">
+  <ion-row>
+    <ion-col size-sm="6" offset-md="3">
+        <ion-item>
+          <ion-button (click)="toHistoryPage()" expand="block"  size="4">History</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="toRestockPage()" expand="block" size="4">Restock</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="toAddItemPage()" expand="block" size="4">Add Item</ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </div>
+  </ion-grid>
+<ion-content>
+
+</ion-content>

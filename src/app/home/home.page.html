@@ -1,20 +1,103 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Cashier App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="ion-padding">
+
+  <ion-grid fixed="sm">
+    <ion-row>
+      <ion-col size-sm="6" offset-md="3">
+        <ion-item>
+          <ion-label>{{this.itemType}}</ion-label>
+          <ion-button (click)="toManagerPage()" expand="block" size="4">Manager</ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-no-padding" col-12 col-sm>
+        <ion-label>Tota: {{this.totalPrice}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="auto" offset-md="4">
+        <ion-row>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+            <ion-button (click)="number1()" shape="round">1</ion-button>
+          </ion-col>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+            <ion-button (click)="number2()" shape="round">2</ion-button>
+          </ion-col>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+            <ion-button (click)="number3()" shape="round">3</ion-button>
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+            <ion-button (click)="number4()" shape="round">4</ion-button>
+          </ion-col>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+            <ion-button (click)="number5()" shape="round">5</ion-button>
+          </ion-col>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+            <ion-button (click)="number6()" shape="round">6</ion-button>
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+            <ion-button (click)="number7()" shape="round">7</ion-button>
+          </ion-col>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+            <ion-button (click)="number8()" shape="round">8</ion-button>
+          </ion-col>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+            <ion-button (click)="number9()" shape="round">9</ion-button>
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+          </ion-col>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+            <ion-button (click)="number0()" shape="round">0</ion-button>
+          </ion-col>
+          <ion-col class="ion-no-padding" col-12 col-sm>
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-md="3">
+        <ion-item>
+          <ion-button (click)="resetBtn()" expand="block" size="4">Reset</ion-button>
+          <ion-button (click)="buyBtn()" slot="end" expand="block" size="4">Buy</ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-md="3">
+        <ion-list-header>
+          <ion-label>Quantity: {{this.totalQuantity}}</ion-label>
+        </ion-list-header>
+        <ion-list>
+          <ion-item *ngFor="let item of listOfItems; let i = index"
+          (click)="itemChosen(item, i)" 
+         [ngStyle]="{color: selectedItem == i ? 'blue' : null}">
+            <ion-label>{{item.title}}</ion-label>
+            <ion-label>$${{item.price}}</ion-label>
+            <ion-label>Quantity: {{item.quantity}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
 </ion-content>
